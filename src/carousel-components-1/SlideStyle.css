@@ -1,0 +1,33 @@
+
+.slider {
+  text-align: center;
+  margin: 10% auto;
+}
+
+.backArrow {
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+.nextArrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+
+.inactive {
+  display: none;
+}
+
+
+.active {
+  display: block;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+}
+
