@@ -11,16 +11,18 @@
 
 input {
     width: 10%;
-    margin: 2% auto;
+    margin: 1% auto;
     text-align: center;
 }
 
 .choices {
-    width: 20%
+    width: 20%;
+    text-align: center;
+    border: green 1px dashed;
 }
 
 .wrong1 {
-    color: yellow
+    color: red
 }
 
 .noGiphy {

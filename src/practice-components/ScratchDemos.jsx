@@ -1,7 +1,8 @@
-import React from 'react'
-import './scratch.css'
-import Marvin from '../music/Got-To-Give-lt-Up-Marvin-Gaye.mp3'
-import giphy from '../media/MarvinGiphy.gif'
+import React from 'react';
+import './scratch.css';
+import Marvin from '../music/Got-To-Give-lt-Up-Marvin-Gaye.mp3';
+import giphy from '../media/MarvinGiphy.gif';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -25,20 +26,30 @@ const ScratchDemos = props => {
 
 
     //Game 
-    const [wrong, wrongChoice] = React.useState(false)
+    const [wrong1, wrongChoice1] = React.useState(false);
+    const [wrong2, wrongChoice2] = React.useState(false);
+    const [wrong3, wrongChoice3] = React.useState(false);
+    const [wrong4, wrongChoice4] = React.useState(false);
   
     const [right, rightChoice] = React.useState(false)
 
-    let wrongAnswer = () => {
-        wrongChoice(true)
+    let wrongAnswer1 = () => {
+        wrongChoice1(true)
     }
+
+    let wrongAnswer2 = () => {
+        wrongChoice2(true)
+    }
+    let wrongAnswer3 = () => {
+        wrongChoice3(true)
+    }
+    let wrongAnswer4 = () => {
+        wrongChoice4(true)
+    }
+
   
     const rightAnswer = () => {
         rightChoice(true);
-        wrongChoice(false);
-        let wrongAnswer = () => {
-            return
-        }
     }
 
     const wrongAns = [
@@ -46,17 +57,17 @@ const ScratchDemos = props => {
             wrong: <p className='wrong1'>Nah Thats not even close</p>
         },
         {
-            wrong: <p>You don't know about the classics!</p>
+            wrong: <p className='wrong1'>You don't know about the classics!</p>
         },
         {
-            wrong: <p>Can't belive you thought that would be correct</p>
+            wrong: <p className='wrong1'>Can't belive you thought that would be correct</p>
         },
         {
-            wrong: <p>I think you need to find culture</p>
+            wrong: <p className='wrong1'>I think you need to find culture</p>
         }
     ];
 
-    const correct = <p>You know about the old school!</p>
+    const correct = <p>CORRECT! You know about the old school!</p>
 
 
     return (
@@ -67,23 +78,25 @@ const ScratchDemos = props => {
             </audio>
 
             <h1>
-                Which artist listed is behind the song?
+                Which artist sings this song?
             </h1>
+
+            <p>Click the play button below and decide which artist is responsible for the audio track!</p>
 
             {playing ? <input type='button' value='Stop' onClick={stopTrack} /> : <input type='button' value='Play' onClick={playTrack} />}
 
 
             <div className='choiceHolder'>
                 
-                {wrong ? wrongAns[0].wrong : <input className='choices' type='button' value='Barry White' onClick={wrongAnswer} />  }
+                {wrong1 ? wrongAns[0].wrong : <input className='choices' type='button' value='Barry White' onClick={wrongAnswer1} />  }
 
-                {<input className='choices' type='button' value='James Brown' />}
+                {wrong2 ? wrongAns[1].wrong : <input className='choices' type='button' value='James Brown' onClick={wrongAnswer2}/>}
 
                 {right ? correct : <input className='choices' type='button' value='Marvin Gaye' onClick={rightAnswer} />}
 
-                {<input className='choices' type='button' value='Lionel Richie' />}
+                {wrong3 ? wrongAns[2].wrong : <input className='choices' type='button' value='Lionel Richie' onClick={wrongAnswer3} />}
 
-                { <input className='choices' type='button' value='Al Green'  />}
+                {wrong4 ? wrongAns[3].wrong : <input className='choices' type='button' value='Al Green' onClick={wrongAnswer4} />}
 
                 <div>
                     <img className={!right ? 'noGiphy' : 'giphy'} src={giphy}/>
