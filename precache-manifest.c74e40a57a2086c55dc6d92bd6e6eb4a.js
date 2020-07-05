@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3c6cb3a910bbed47bcbd8c894c16d4d5",
+    "revision": "987548e00b8479c5a4d4c1b5a6312000",
     "url": "/always-practice-reactJS/index.html"
   },
   {
-    "revision": "150903ef45b5f04bfb99",
-    "url": "/always-practice-reactJS/static/css/main.938213ad.chunk.css"
+    "revision": "d575f9e979e38ba1a10b",
+    "url": "/always-practice-reactJS/static/css/main.5093fd92.chunk.css"
   },
   {
     "revision": "6a1b0bfa725f9fc69f4e",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/always-practice-reactJS/static/js/2.37c1ffd9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "150903ef45b5f04bfb99",
-    "url": "/always-practice-reactJS/static/js/main.bf889e06.chunk.js"
+    "revision": "d575f9e979e38ba1a10b",
+    "url": "/always-practice-reactJS/static/js/main.93676dcd.chunk.js"
   },
   {
     "revision": "9d57425971022982236f",
