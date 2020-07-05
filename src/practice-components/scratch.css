@@ -1,10 +1,34 @@
-.button {
-    display: flex;
+.gameHolder {
     text-align: center;
-    align-items: center;
-    justify-content: center;
-    background: blue;
-    width: 200px;
-    height: 100px;
-    cursor: pointer;
+}
+
+.choiceHolder {
+    display: flex;
+    flex-direction: column;
+    margin: 2% auto;
+    width: 100%;
+}
+
+input {
+    width: 10%;
+    margin: 2% auto;
+    text-align: center;
+}
+
+.choices {
+    width: 20%
+}
+
+.wrong1 {
+    color: yellow
+}
+
+.noGiphy {
+    display: none;
+}
+
+.giphy {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
 }
