@@ -10,12 +10,14 @@ import ReactDOM from 'react-dom';
 //import EmailPage from './practice-components/EmailPage.jsx';
 //import TutorialTesting from './practice-components/TutorialTesting.jsx';
 //import ThirdPartyPlug from './third-party-plugs/ThirdPartyPlug.jsx'
-import ScratchDemos from './practice-components/ScratchDemos.jsx'
+//import ScratchDemos from './practice-components/ScratchDemos.jsx'
+import Praccy from './practice-components/Praccy.jsx'
+import TimeQuiz from './practice-components/TimeQuiz.jsx';
 
 
 
 
 ReactDOM.render(
-  <ScratchDemos/>,
+  <TimeQuiz/>,
   document.getElementById('root')
 );
