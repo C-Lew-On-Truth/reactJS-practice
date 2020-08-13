@@ -1,0 +1,56 @@
+.intro {
+    text-align: center;
+    font-size: 30px;
+    font-family: Impact;
+    color: blue;
+}
+
+
+.intro p {
+    
+}
+
+.gameHolder {
+    width: 90%;
+    margin: 4% auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    border: blue dashed 4px;
+    background: white;
+}
+
+.answers1, .answers2, .answers3, .answers4 {
+    width: 20%;
+    height: 200px;
+    border: blue solid 1px;
+    margin: 2% auto;
+    cursor: pointer;
+}
+
+
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.timer {
+    text-align: center;
+    color:blue;
+    font-size: 50px;
+}
+
+/*
+@media screen and (max-width: 800px) {
+    .gameHolder {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .answer {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+*/

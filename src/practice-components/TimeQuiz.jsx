@@ -1,80 +1,74 @@
 import React from 'react';
-import '../practice-components/time-quiz.css'
+import '../styles/time-quiz.css'
 import smile from '../media/smileyFace2.jpg'
 import wrong from '../media/wrong.jpg';
 import pizza from '../media/Pizza.jpg';
 import tacos from '../media/Tacos.jpg';
 import pasta from '../media/Spaghetti.jpg';
-import chicken from '../media/FriedChicken.jpg';
+import chick from '../media/FriedChicken.jpg';
+
+
 
 const TimeQuiz = () => {
+
+    //Quiz functions
     const [time, setTime] = React.useState(60)
     const [count, countDown] = React.useState(true)
-    const [pastaRight, pastaPic] = React.useState(pasta)
-    const [tacosWrong, tacoPic] = React.useState(tacos)
-    const [pizzaWrong, pizzaPic] = React.useState(pizza)
-    const [chickWrong, chickPic] = React.useState(chicken)
+    const [pic, picsChange] = React.useState(true)
+
+    //Picture Choices
+    const [pastaAns, pastaChange] = React.useState(pasta)
+    const [chickAns, chickChange] = React.useState(chick)
+    const [tacoAns, tacoChange] = React.useState(tacos)
+    const [pizzaAns, pizzaChange] = React.useState(pizza)
+
 
     React.useEffect(() => {
-        let timer = () => setTimeout(() => setTime(time - 1), 1000)
+        const timer = () => setTimeout(() => setTime(time - 1), 1000);
+
         if (count === true) {
             time > 0 && timer()
         } else if (count === false) {
             clearTimeout(timer())
-        } else if (count === 0) {
-            console.log('number')
         }
     }, [time, count])
 
-    const rightPasta = () => {
-        pastaPic(smile)
-        countDown(false)
-    }
-
-    const wrongTacos = () => {
-
-        if(count === false) {
-            tacoPic(tacos)
-        } else {
-            tacoPic(wrong)
-        }
-    }
-    const wrongPizza = () => {
-        if(count === false) {
-            pizzaPic(pizza)
-        } else {
-            pizzaPic(wrong)
-        }
-    }
-    const wrongChick = () => {
-        if(count === false) {
-            chickPic(chicken)
-        } else {
-            chickPic(wrong)
+    const answerKey = event => {
+        let target = event.currentTarget.className
+        
+        if (target === 'answers1') {
+            pastaChange(smile)
+            countDown(false)
+            picsChange(false)
+        } else if (target === 'answers2' && pic) {
+            chickChange(wrong)
+        } else if (target === 'answers3' && pic) {
+            tacoChange(wrong)
+        } else if (target === 'answers4' && pic) {
+            pizzaChange(wrong)
         }
     }
 
     return (
         <div>
             <div className='intro'>
-                <h1>Know your foods!</h1>
-
+                <h1 onClick={() => { alert(window.innerWidth) }}>Know your foods!</h1>
                 <p>Choose the picture that has pasta!</p>
             </div>
 
             <div className='gameHolder'>
 
-                <div className='answers' onClick={rightPasta}>
-                    <img src={pastaRight} />
+                <div className='answers1' answers='pasta' onClick={answerKey}>
+                    <img src={pastaAns} alt='' draggable={false} />
                 </div>
-                <div className='answers' onClick={wrongTacos}>
-                    <img src={tacosWrong} />
+                <div className='answers2' name='tacos' onClick={answerKey}>
+                    <img src={chickAns} alt='' draggable={false} />
                 </div>
-                <div className='answers' onClick={wrongPizza}>
-                    <img src={pizzaWrong} />
+                <div className='answers3' name='pizza' onClick={answerKey}>
+                    <img src={tacoAns} alt='' draggable={false} />
                 </div>
-                <div className='answers' onClick={wrongChick}>
-                    <img src={chickWrong} />
+                <div className='answers4' name='chicken' onClick={answerKey}>
+                    <img src={pizzaAns} alt='' draggable={false} />
                 </div>
 
             </div>

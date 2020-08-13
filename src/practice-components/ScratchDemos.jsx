@@ -1,8 +1,8 @@
 import React from 'react';
-import './scratch.css';
+import '../styles/scratch.css';
 import Marvin from '../music/Got-To-Give-lt-Up-Marvin-Gaye.mp3';
 import giphy from '../media/MarvinGiphy.gif';
-import Button from '@material-ui/core/Button';
+
 
 
 

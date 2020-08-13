@@ -2,7 +2,6 @@
 import React from 'react';
 import AudioPlayer from './AudioPlayer.jsx';
 import VideoPlayer from './VideoPlayer.jsx'
-import VideoCarousel from '../carousel-components-2/VideoCarousel.jsx';
 
 
 class MainPage extends React.Component {
@@ -72,7 +71,7 @@ class MainPage extends React.Component {
           Same ref code style that I used with Video player does not work
           </p>
         <div style={videoHolder}>
-          <VideoCarousel />
+            <VideoPlayer/>
         </div>
 
 

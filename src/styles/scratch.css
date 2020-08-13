@@ -1,0 +1,7 @@
+.noGiphy {
+    display: none
+}
+
+.giphy {
+    display: block
+}

@@ -1,8 +1,7 @@
 import React from 'react';
 import '../styles/video-styles.css';
 import ClubJams from '../videos/club-jammin.mp4';
-import BuffGoof from '../videos/BuffaloGoofin.mov';
-
+import SpyVid from '../videos/SPOR_original.mp4';
 
 class VideoPlayer extends React.Component {
     constructor() {
@@ -48,7 +47,7 @@ class VideoPlayer extends React.Component {
                     onPlay={this.videoPlays}
                     controls
                 >
-                    <source src={BuffGoof} />
+                    <source src={SpyVid} />
                 </video>
                 </div>
 
