@@ -1,0 +1,43 @@
+body {
+  background: black;
+}
+
+.pageHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 7%;
+}
+
+.confirmHolder {
+  opacity: 1;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  background-color: black;
+  border-radius: 2%;
+  box-shadow: 3px 16px 228px 59px white ;
+}
+
+.confirmBorder1 {
+  border: double white 20px;
+}
+
+.confirmBorder2 {
+  border: double red 20px;
+}
+
+
+
+
+img {
+  margin: 10% auto;  
+  width: 40%;
+}
+
+p {
+  color: white;
+  font-weight: bold;
+  font-family: Impact, fantasy;
+  font-size: 30px;
+}

@@ -11,14 +11,15 @@ import ReactDOM from 'react-dom';
 //import TutorialTesting from './practice-components/TutorialTesting.jsx';
 //import ThirdPartyPlug from './third-party-plugs/ThirdPartyPlug.jsx';
 //import ScratchDemos from './practice-components/ScratchDemos.jsx';
-import TimeQuiz from './practice-components/TimeQuiz.jsx';
+//import TimeQuiz from './practice-components/TimeQuiz.jsx';
 //import FormPraccy from './practice-components/FormPraccy.jsx';
 //import PraccyOne from './practice-components/PraccyOne.jsx'
+import ReduxPraccy from './practice-components/ReduxPraccy.jsx'
 
 
 
 
 ReactDOM.render(
-  <TimeQuiz/>,
+  <ReduxPraccy/>,
   document.getElementById('root')
 );

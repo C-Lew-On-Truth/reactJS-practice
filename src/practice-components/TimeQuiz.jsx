@@ -12,7 +12,7 @@ import chick from '../media/FriedChicken.jpg';
 const TimeQuiz = () => {
 
     //Quiz functions
-    const [time, setTime] = React.useState(60)
+    const [time, setTime] = React.useState(10)
     const [count, countDown] = React.useState(true)
     const [pic, picsChange] = React.useState(true)
 
@@ -30,6 +30,10 @@ const TimeQuiz = () => {
             time > 0 && timer()
         } else if (count === false) {
             clearTimeout(timer())
+        }
+
+        if( time <= 0 ) {
+            alert('you blew it!')
         }
     }, [time, count])
 
