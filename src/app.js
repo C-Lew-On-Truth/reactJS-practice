@@ -1,51 +1,58 @@
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import './app.css'
 
-import React from 'react';
-import Smiley from './media/smileyFace2.jpg';
-
-class Follower extends React.Component {
-  render() {
-    const mouse = this.props.mouse
-    return (
-      <img src={Smiley} style={{position: 'absolute', left: mouse.x, top: mouse.y}} />
-    )
-  }
-}
-
-class Leader extends React.Component {
-  constructor(props) {
-    super(props)
-    this.handleLeaderMove = this.handleLeaderMove.bind(this)
-    this.state = {x: 0, y: 0}
-  }
-
-  handleLeaderMove = (event) => {
-    this.setState({
-      x: event.clientX,
-      y: event.clientY
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <div style={{height: '100vh'}} onMouseMove={this.handleLeaderMove}></div>
-
-        <Follower mouse={this.state}/>
-      </div>
-    )
-  }
-}
-
-
-
+//import VideoTest from './practice-components/VideoTest.jsx';
+import VideoPlayer from './practice-components/VideoPlayer.jsx';
+//import MainPage from './practice-components/MainPage.jsx';
+//import EmailPage from "./practice-components/EmailConfirmation.jsx";
+//import TutorialTesting from './practice-components/TutorialTesting.jsx';
+//import ThirdPartyPlug from './third-party-plugs/ThirdPartyPlug.jsx';
+//import ScratchDemos from './practice-components/ScratchDemos.jsx';
+import TimeQuiz from "./practice-components/TimeQuiz.jsx";
+//import FormPraccy from './practice-components/FormPraccy.jsx';
+//import PraccyOne from './practice-components/PraccyOne.jsx'
+//import ReduxPraccy from './practice-components/ReduxPraccy.jsx'
+import SmileyFace from './practice-components/Smiley.jsx';
+//import DragDrop from './practice-components/DragAndDrop';
+import Home from './practice-components/Home';
 
 class App extends React.Component {
   render() {
     return (
-      <div>
-        <Leader />
+      <div >
+        <Router>
+          <div className='nav-holder'>
+          <Link className="links" to="/">HOME</Link>
+          <Link className="links" to="/SmileyFace">Smiley Face</Link>
+          <Link className="links"to="/TimeQuiz">TimeQuiz</Link>
+          <Link className="links"to="/VideoPlayer">Video Player</Link>
+          </div>
+
+        
+
+          <Switch>
+            <Route exact path="/">
+              <Home/>
+            </Route>
+
+            <Route path="/SmileyFace">
+              <SmileyFace />
+            </Route>
+
+            <Route path="/TimeQuiz">
+              <TimeQuiz />
+            </Route>
+
+            <Route path="/VideoPlayer">
+              <VideoPlayer/>
+            </Route>
+
+           
+          </Switch>
+        </Router>
       </div>
-    )
+    );
   }
 }
 

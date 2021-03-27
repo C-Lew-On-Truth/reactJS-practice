@@ -1,4 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
 .hidden {
     display: none;
 }
 
+.nav-holder {
+    background: red;
+    height: 5vh;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.links {
+    text-decoration: none;
+}

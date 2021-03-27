@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './App.css'
-import PixieLogo from './media/pixie-logo.png'
+import '../app.css'
+import PixieLogo from '../media/pixie-logo.png'
 
 class EmailConfirm extends React.Component {
   state = {
@@ -25,6 +25,6 @@ class EmailConfirm extends React.Component {
   }
 }
 
-ReactDOM.render(<EmailConfirm />, document.getElementById('root'));
+export default EmailConfirm
 
 
