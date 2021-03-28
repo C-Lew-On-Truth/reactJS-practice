@@ -2,15 +2,21 @@
     box-sizing: border-box;
 }
 
+body {
+    
+    height: 100%;
+    display: grid;
+}
 .hidden {
     display: none;
 }
 
 .nav-holder {
     background: red;
+    top: 0;
+   border: dashed;
+  
     height: 5vh;
-    width: 100%;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -19,4 +25,8 @@
 
 .links {
     text-decoration: none;
+}
+
+.home {
+    background: red;
 }

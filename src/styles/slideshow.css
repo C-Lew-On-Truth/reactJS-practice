@@ -1,0 +1,30 @@
+.slide-page {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.slider {
+    position: relative;
+    height: 400px;
+    width: 400px;
+}
+
+.slide {
+    position: relative;
+    opacity: 0;
+    width: 300px;
+}
+
+.slide.active {
+    opacity: 1;
+    position: absolute;
+}
+
+.image {
+    position: absolute;
+    left: 3px;
+    height: 100%;
+    border: ridge white 4px;
+}
