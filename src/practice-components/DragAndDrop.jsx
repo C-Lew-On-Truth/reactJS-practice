@@ -1,8 +1,6 @@
 import React, { useRef} from "react";
 import "../styles/drag-drop.css";
 
-const getCard = useRef
-
 function Card(props) {
   const dragStart = (e) => {
     const target = e.target;
