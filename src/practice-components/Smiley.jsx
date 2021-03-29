@@ -5,7 +5,7 @@ class Follower extends React.Component {
     render() {
       const mouse = this.props.mouse
       return (
-        <img src={Smiley} style={{height: '100px',width: '100px', position: 'absolute', left: mouse.x, top: mouse.y}} />
+        <img src={Smiley} style={{height: '100px',width: '100px', position: 'absolute', left: mouse.x, top: mouse.y}} alt='' />
       )
     }
   }

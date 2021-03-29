@@ -3,10 +3,10 @@
 }
 
 body {
-    
     height: 100%;
     display: grid;
 }
+
 .hidden {
     display: none;
 }
@@ -14,13 +14,12 @@ body {
 .nav-holder {
     background: red;
     top: 0;
-   border: dashed;
-  
+    border: dashed;
     height: 5vh;
     display: flex;
+    flex-flow: row;
     align-items: center;
     justify-content: space-around;
-
 }
 
 .links {

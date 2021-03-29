@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box
+}
+
+body {
+    height: 100%;
+}
+
+
+.page-holder {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 768px;
+    height: 95vh;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 15px
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    background: blue;
+    padding: 15px;
+}
+
+.card {
+    padding: 15px 25px; 
+    background: white;
+    margin-bottom: 15px;
+}

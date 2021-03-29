@@ -3,12 +3,7 @@ import '../styles/scratch.css';
 import Marvin from '../music/Got-To-Give-lt-Up-Marvin-Gaye.mp3';
 import giphy from '../media/MarvinGiphy.gif';
 
-
-
-
-
-
-const ScratchDemos = props => {
+const MusicQuiz = props => {
 
     //Audio
     const track = React.useRef()
@@ -99,7 +94,7 @@ const ScratchDemos = props => {
                 {wrong4 ? wrongAns[3].wrong : <input className='choices' type='button' value='Al Green' onClick={wrongAnswer4} />}
 
                 <div>
-                    <img className={!right ? 'noGiphy' : 'giphy'} src={giphy}/>
+                    <img className={!right ? 'noGiphy' : 'giphy'} src={giphy} alt=''/>
                 </div>
             </div>
 
@@ -116,4 +111,4 @@ const ScratchDemos = props => {
 
 
 
-export default ScratchDemos
+export default MusicQuiz

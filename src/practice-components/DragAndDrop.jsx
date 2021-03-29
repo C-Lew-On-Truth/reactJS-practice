@@ -1,77 +1,79 @@
-import React from 'react';
+import React, { useRef} from "react";
+import "../styles/drag-drop.css";
 
+const getCard = useRef
 
-class DragAndDrop extends React.Component {
-    dragStart = (e, id) => {
-        e.dataTransfer.setData("id", id)
-    }
+function Card(props) {
+  const dragStart = (e) => {
+    const target = e.target;
+    e.dataTransfer.setData("card_id", target.id);
 
-    dragOver = (e) => {
-        e.preventDefault()
-    }
-    render() {
-        return (
-            <div className='mainSection'>
-                <h1>React Drag and Drop</h1>
+    setTimeout(() => {
+      target.style.display = "none";
+    }, 0);
+  };
 
-                <div className="dragAndDropHolder">
-                    <div className="dragAndDropItems item1">
-                        <p 
-                        className="dragBlocks"  
-                        onDragStart={this.dragStart} 
-                        onDragOver={this.dragOver}
-                        draggable
-                        >
-                            <span className="text">Block One</span>
-                        </p>
-                    </div>
-                    <div className="dragAndDropItems item2">
+  const dragOver = (e) => {
+    e.stopPropagation();
+  };
 
-                    </div>
-
-                    <div className="dragAndDropItems item1">
-
-                        <p className="dragBlocks" draggable>
-                            <span className="text">Block Two</span>
-                        </p>
-
-                    </div>
-                    <div className="dragAndDropItems item2">
-
-                    </div>
-
-                    <div className="dragAndDropItems item1">
-
-                        <p className="dragBlocks" draggable>
-                            <span className="text">Block Three</span>
-                        </p>
-
-                    </div>
-                    <div className="dragAndDropItems item2">
-
-                    </div>
-
-                    <div className="dragAndDropItems item1">
-                        <p className="dragBlocks" draggable>
-                            <span className="text">Block Four</span>
-                        </p>
-                    </div>
-                    <div className="dragAndDropItems item2">
-
-                    </div>
-
-                    <div className="dragAndDropItems item1">
-                        <p className="dragBlocks" draggable>
-                            <span className="text">Block Five</span>
-                        </p>
-                    </div>
-                    <div className="dragAndDropItems item2">
-
-                    </div>
-                </div>
-            </div>
-        )
-    }
+  return (
+    <div
+      id={props.id}
+      className={props.className}
+      draggable={props.draggable}
+      onDragStart={dragStart}
+      onDragOver={dragOver}
+    >
+      {props.children}
+    </div>
+  );
 }
 
-export default DragAndDrop
+function Board(props) {
+  const drop = (e) => {
+    e.preventDefault();
+    const card_id = e.dataTransfer.getData("card_id");
+    const card = document.getElementById(card_id);
+    card.style.display = "block";
+
+    e.target.appendChild(card);
+  };
+
+  const dragOver = (e) => {
+    e.preventDefault();
+  };
+  return (
+    <div
+      id={props.id}
+      className={props.className}
+      onDrop={drop}
+      onDragOver={dragOver}
+    >
+      {props.children}
+    </div>
+  );
+}
+
+class DragAndDrop extends React.Component {
+  render() {
+    return (
+      <div className="page-holder">
+        <div className="flexbox">
+          <Board id="board-1" className="board">
+            <Card id="card-1" className="card" draggable={true}>
+              <p>Card One</p>
+            </Card>
+          </Board>
+          <Board id="board-2" className="board">
+            <Card id="card-2" className="card" draggable={true}>
+              <p>Card Two</p>
+            </Card>
+          </Board>
+        </div>
+      </div>
+    );
+  }
+}
+
+export default DragAndDrop;
